@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true
+    },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Scale-Wise VAR is Secretely Discrete Diffusion.">
+  <meta name="keywords" content="Multimodal generaiton, spatial conditioning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SRDD</title>
+  
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Scale-Wise VAR is Secretely Discrete Diffusion</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://virobo-15.github.io/">Amandeep Kumar </a><sup>*</sup>,</span>
+            <span class="author-block">
+              <a href="https://nithin-gk.github.io/">Nithin Gopalakrishnan Nair</a><sup>*</sup>,</span>
+            <span class="author-block">
+              <a href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/">Vishal M Patel</a>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Johns Hopkins University,</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="./static/images/srdd.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2404.09977"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/VIROBO-15/SRDD"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <img src="./static/images/intro_fig.png" alt="Toby" id="toby" style="height: 100%;">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Qualitative comparisons</span> across image generation and Zero-Shot Task
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <img src="./static/images/img2.png" alt="Toby" id="toby" style="height: 100%;">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Complementary Conditioning</span> Multimodal generation using complementary conditions
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Autoregressive (AR) transformers have emerged as a powerful paradigm for visual generation, largely due to their scalability, computational efficiency and unified architecture with language and vision. Among them, next scale prediction Visual Autoregressive Generation (VAR) has recently demonstrated remarkable performance, even surpassing diffusion-based models. In this work, we revisit VAR and uncover a theoretical insight: when equipped with a Markovian attention mask, VAR is mathematically equivalent to a discrete diffusion. We term this reinterpretation as Scalable Visual Refinement with Discrete Diffusion (SRDD), establishing a principled bridge between AR transformers and diffusion models. Leveraging this new perspective, we show how one can directly import the advantages of diffusion—such as iterative refinement and reduce architectural inefficiencies into VAR, yielding faster convergence, lower inference cost, and improved zero-shot reconstruction. Across multiple datasets, we show that the diffusion-based perspective of VAR leads to consistent gains in efficiency and generation. 
+          </p>
+          <p>
+            
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!--/ Matting. -->
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <!-- <h2 class="title is-3">Conditioning Intensity in Variance Maps</h2> -->
+
+        <!-- Interpolating. -->
+        <h3 class="title is-4">Analysis across SNR</h3>
+        <div class="content has-text-justified">
+          <p>
+            We visualize how SNR improves through successive stages of the generation, which is very similar to that in diffusion process.
+          </p>
+        </div>
+        <div class="title is-4">
+          <img src="./static/images/SNR_fig.png" alt="Toby" id="toby" style="height: 100%;">
+        </div>
+        <br/>
+        <!--/ Interpolating. -->
+
+        <!-- Re-rendering. -->
+        <!-- <h3 class="title is-5">Intermediate features of a Diffusion Model</h3>
+        <div class="content has-text-justified">
+          <p>
+            Figure illustrating variance maps of intermediate features of encoder and decoder for the
+text prompt "An astronaut riding a horse" for the 5th timestep of diffusion.
+          </p>
+        </div>
+        <div class="title is-5">
+          <img src="./static/images/variance_text.png" alt="Toby" id="toby" style="height: 100%;">
+        </div> -->
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+
+
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!--/ Matting. -->
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Our Approach</h2>
+        <div class="columns is-centered">
+        <div class="column is-12"> <!-- wider column -->
+          <figure class="image" style="max-width:1100px; margin:0 auto;">
+            <img src="./static/images/arch.png" alt="Method" style="width:100%; height:auto;">
+          </figure>
+        </div>
+      </div>
+
+        <!-- Interpolating. -->     
+        <div class="content has-text-justified">
+          <p>
+  An illustration of SDD. The SDD forward process $g(I_n \mid I_0) = M(n) I_0$ mirrors the diffusion transition $q(x_t \mid x_0)$, where the ground truth $I_0$ is deterministically degraded by the transition matrix $M(n)$. Further, the learnable transformer $f_\theta(I_n, n, y)$ predicts the coarser-to-finer transition $I_{n+1}$, analogous to the reverse diffusion step $p_\theta(x_{t-1} \mid x_t)$. Importantly, the training objective in both cases reduces to a cross-entropy loss between the forward posterior and model prediction, making the loss formulation of SDD equivalent to the diffusion ELBO in the limiting case of a deterministic transition.
+</p>
+        </div>
+
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!--/ Matting. -->
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Quantitative results</h2>
+
+        <!-- Interpolating. -->
+        <h3 class="title is-5">Comparsion across methods</h3>
+        <div class="content has-text-justified">
+          <p>
+            Quantitative results compared to different generative models on the same training setting: We compare using FID and IS on conditional and unconditional generation tasks. Here, "-" denotes that the model has not converged during the training process.
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-9">
+            <figure class="image">
+              <img src="./static/images/Quantative_result.png" alt="Contradictory conditioning results">
+            </figure>
+          </div>
+        </div>
+        
+        <br/>
+        <!--/ Interpolating. -->
+        
+        <!-- Re-rendering. -->
+        <h3 class="title is-5">Ablation study</h3>
+        <div class="content has-text-justified">
+          <p>
+            Ablation study across datasets: SR: Simple Resampling. MR: Mask Resampling. cfg: Optimized Classifier-Free Guidance.
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <figure class="image">
+              <img src="./static/images/Ablation_study.png" alt="Complementary conditioning results">
+            </figure>
+          </div>
+        </div>
+        
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+
+
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Method Wise Analysis</h2>
+
+        <!-- Resampling -->
+        <h3 class="title is-5">Resampling</h3>
+        <div class="content has-text-justified">
+          <p>
+            Ablation study illustrating the effect of MR: We experiment with different threshold $p_{\mathrm{resample}}$ and the number of refinement steps (Zoom in for better view)
+          </p>
+        </div>
+
+        <!-- Three images side by side -->
+        <div class="columns is-centered">
+          <div class="column is-one-third has-text-centered">
+            <figure class="image">
+              <img src="./static/images/fid_cfg3p5_colored.png" alt="Plot 1">
+              
+            </figure>
+          </div>
+          <div class="column is-one-third has-text-centered">
+            <figure class="image">
+              <img src="./static/images/fid_cfg5_colored.png" alt="Plot 2">
+              
+            </figure>
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-8 has-text-centered">
+            <figure class="image">
+              <img src="./static/images/sampling_probability.png" alt="Sampling probability table">
+              
+            </figure>
+          </div>
+        </div>
+
+        <!-- <div class="columns is-centered">
+          <div class="column is-half has-text-centered">
+            <figure class="image equal-plot">
+              <img src="./static/images/fid_vs_refinement_miniimagenet.png" alt="Plot 1">
+              
+            </figure>
+          </div>
+          <div class="column is-half has-text-centered">
+            <figure class="image equal-plot">
+              <img src="./static/images/fid_vs_refinement_sun.png" alt="Plot 2">
+              
+            </figure>
+          </div>
+        </div> -->
+
+
+        
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      <!-- @article{nair2024maxfusion,
+  title={MaxFusion: Plug\&Play Multi-Modal Generation in Text-to-Image Diffusion Models},
+  author={Nair, Nithin Gopalakrishnan and Valanarasu, Jeya Maria Jose and Patel, Vishal M},
+  journal={arXiv preprint arXiv:2404.09977},
+  year={2024}} -->
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/images/srdd.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/VIROBO-15/SRDD" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Acknowledgement: The website Template taken from  <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
