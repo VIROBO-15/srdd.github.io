@@ -297,6 +297,20 @@ text prompt "An astronaut riding a horse" for the 5th timestep of diffusion.
         <h3 class="title is-5">Resampling</h3>
         <div class="content has-text-justified">
           <p>
+            Qualitative results illustrating impact of different components: We present the results with each component and their impact.
+          </p>
+        </div>
+
+        <div class="columns is-centered">
+          <div class="column is-10">
+            <figure class="image">
+              <img src="./static/images/Fig_7_new.png" alt="Complementary conditioning results">
+            </figure>
+          </div>
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
             Ablation study illustrating the effect of MR: We experiment with different threshold $p_{\mathrm{resample}}$ and the number of refinement steps (Zoom in for better view)
           </p>
         </div>
@@ -325,20 +339,52 @@ text prompt "An astronaut riding a horse" for the 5th timestep of diffusion.
           </div>
         </div>
 
-        <!-- <div class="columns is-centered">
-          <div class="column is-half has-text-centered">
-            <figure class="image equal-plot">
-              <img src="./static/images/fid_vs_refinement_miniimagenet.png" alt="Plot 1">
-              
+        <div class="content has-text-justified">
+          <p>
+            Effect of refinement steps in MR: Increasing MR steps leads to convergence in both the MiniImageNet and SUN397 datasets.
+          </p>
+        </div>
+
+        
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <figure class="image">
+              <img src="./static/images/fid_vs_refinement_1.png" alt="Complementary conditioning results">
             </figure>
           </div>
-          <div class="column is-half has-text-centered">
-            <figure class="image equal-plot">
-              <img src="./static/images/fid_vs_refinement_sun.png" alt="Plot 2">
-              
+        </div>
+
+        
+
+        <h3 class="title is-5">Classifier-Free Guidance</h3>
+        <div class="content has-text-justified">
+          <p>
+            Effect of cfg: We present the effect of cfg on FID and IS on MiniImageNet and SUN397 datasets.
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-12">
+            <figure class="image">
+              <img src="./static/images/cfg.png" alt="Complementary conditioning results">
             </figure>
           </div>
-        </div> -->
+        </div>
+
+        <h3 class="title is-5">Distillation of Markovian Variant of VAR(SDD)</h3>
+        <div class="content has-text-justified">
+          <p>
+            Similar to diffusion models we study the effect of ditillation of SDD after reducing the scales 
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-12">
+            <figure class="image">
+              <img src="./static/images/fid_is_distill.png" alt="Complementary conditioning results">
+            </figure>
+          </div>
+        </div>
+        
+
 
 
         
@@ -350,6 +396,36 @@ text prompt "An astronaut riding a horse" for the 5th timestep of diffusion.
 
 
 
+
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">More Qualitative results</h2> -->
+
+        <!-- Resampling -->
+        <!-- <h3 class="title is-5">More Qualitative results</h3>
+        <div class="content has-text-justified">
+          <p>
+            Qualitative results illustrating impact of different components: We present the results with each component and their impact.
+          </p>
+        </div> -->
+
+        <!-- <div class="columns is-centered">
+          <div class="column is-10">
+            <figure class="image">
+              <img src="./static/images/Fig_7_new.png" alt="Complementary conditioning results">
+            </figure>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section> -->
 
 
 <section class="section" id="BibTeX">
@@ -397,3 +473,4 @@ text prompt "An astronaut riding a horse" for the 5th timestep of diffusion.
 
 </body>
 </html>
+
